@@ -1,0 +1,1 @@
+Contains reference metadata codes for GDELT
