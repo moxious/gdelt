@@ -8,7 +8,7 @@ WITH line,
      apoc.text.split(line.V2Persons, ',\\d+;?') as persons,
      apoc.text.split(line.V2Themes, ',\\d+;?') as themes,
      apoc.text.split(line.V2Organizations, ',\\d+;?') as organizations
-MERGE (s:Source { name: line.SourceCommonName })
+MERGE (s:Source { name: coalesce(line.SourceCommonName, 'Source Name Missing') })
 CREATE (e:Event {
     id: line.GKGRECORDID,
     date: line.DATE,
