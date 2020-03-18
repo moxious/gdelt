@@ -46,7 +46,8 @@ ELAPSED_CODES=$(($END_CODES - $START_CODES))
 echo "Load phase" 
 START_LOAD=$(date +%s)
 
-for url in $(cat segments.list) ; do
+# Exclude commented segments
+for url in $(cat segments.list| grep -v '#') ; do
    export SEGMENT="$url"
    echo "SEGMENT $SEGMENT"
    cat 02-load.cypher | envsubst | cypher-shell -a $NEO4J_URI
