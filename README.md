@@ -14,6 +14,9 @@ We use publicly available Google BigQuery tables to create a dated extract.  Tha
 a temporary table in Google Cloud.   That table gets exported to a set of shard CSV files on 
 Google Storage.   Those files end up in `segments.list`, which are fed into the load process.
 
+See the bigquery-extract.sql file for which data is pulled with which criteria.
+With that table, export to CSV.
+
 ## Benchmarking
 
 The benchmark.sh script runs the complete load process, with timings suitable to be fed into
