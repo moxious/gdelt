@@ -15,13 +15,17 @@ WHERE
     /* _PARTITIONTIME < "2020-03-19 00:00:00" AND */
 
     /* TOPIC FILTER */
-    (lower(V2Themes) like '%coronavirus' OR
+    (lower(V2Themes) like '%coronavirus%' OR
+     lower(V2Themes) like '%covid-19%' OR
+     lower(V2Themes) like '%outbreak%' OR
+     lower(DocumentIdentifier) like '%coronavirus%' OR
      lower(DocumentIdentifier) like '%covid-19%' OR
      lower(DocumentIdentifier) like '%outbreak%' OR
-     lower(DocumentIdentifier) like '%coronavirus%' OR
      lower(V2Counts) like '%coronavirus%' OR
      lower(V2Counts) like '%covid-19%' OR
+     lower(V2Counts) like '%outbreak%' OR 
      lower(V2Organizations) like '%coronavirus%' OR
-     lower(V2Organizations) like '%covid-19%'
+     lower(V2Organizations) like '%covid-19%' OR
+     lower(V2Organizations) like '%outbreak%'
     )
 ;
