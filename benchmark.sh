@@ -45,6 +45,13 @@ ELAPSED_CODES=$(($END_CODES - $START_CODES))
 
 echo "Load phase" 
 START_LOAD=$(date +%s)
+
+for url in $(cat segments.list) ; do
+   export SEGMENT="$url"
+   echo "SEGMENT $SEGMENT"
+   cat 02-load.cypher | envsubst | cypher-shell -a $NEO4J_URI
+done
+
 cat 02-load.cypher | cypher-shell -a $NEO4J_URI
 OVERALL_EXIT_CODE=$(($OVERALL_EXIT_CODE + $?))
 END_LOAD=$(date +%s)
