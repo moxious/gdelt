@@ -36,10 +36,6 @@ MERGE (t:Theme { name: line[0] })
   SET t.id = line[1]
 RETURN count(t);
 
-MERGE (e:Entity:EventCode { code: line.CAMEOEVENTCODE })
-SET e.goldsteinScale = line.GOLDSTEINSCALE
-return count(e);
-
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/moxious/gdelt/master/data/GCAM-MASTER-CODEBOOK.TXT" AS line
 FIELDTERMINATOR '\t'
 MERGE (g:GCAMVariable {
