@@ -1,3 +1,5 @@
+CREATE CONSTRAINT event_id ON (e:Event) ASSERT e.id IS UNIQUE;
+
 create index on :Entity(code);
 create index on :GCAMVariable(id);
 

@@ -1,6 +1,6 @@
 # GDELT
 
-This repo provdies for a repeatable method of loading Google's GDELT dataset into Neo4j.
+This repo provides for a repeatable method of loading Google's GDELT dataset into Neo4j.
 
 If you don't know what GDELT is, that's the place to start:
 

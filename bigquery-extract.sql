@@ -10,7 +10,7 @@ SELECT
 FROM `gdelt-bq.gdeltv2.gkg_partitioned` 
 
 WHERE 
-    _PARTITIONTIME >= "2019-12-01 00:00:00" AND 
+    _PARTITIONTIME >= "2020-01-01 00:00:00" AND 
     /* Uncomment to set an end partition date range */
     /* _PARTITIONTIME < "2020-03-19 00:00:00" AND */
 
