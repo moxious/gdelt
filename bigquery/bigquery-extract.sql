@@ -29,3 +29,7 @@ WHERE
      lower(V2Organizations) like '%outbreak%'
     )
 ;
+
+
+CREATE OR REPLACE TABLE gdelt.sourcesbycountry AS
+SELECT * FROM `gdelt-bq.extra.sourcesbycountry`;
